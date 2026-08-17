@@ -66,6 +66,8 @@
             pkgs.git
             pkgs.gawk
             pkgs.which
+            pkgs.probe-rs-tools
+            pkgs.tio
           ]
           ++ extraPackages pkgs;
 
