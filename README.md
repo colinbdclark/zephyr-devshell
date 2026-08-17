@@ -69,8 +69,16 @@ west build -b qemu_x86 . -t run
 
 ### Flashing
 
+With probe-rs:
+
 ```console
-west flash
+west flash -r probe-rs
+```
+
+Via UF2:
+
+```console
+west flash -r uf2
 ```
 
 ## Updating to New Versions of this Repository
