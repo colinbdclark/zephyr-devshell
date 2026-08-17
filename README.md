@@ -97,10 +97,14 @@ nix fmt
 
 ### Testing Unpushed Changes
 
-When testing changes to this devshell from dependent applications, run:
+
+When testing changes to this devshell from dependent applications, there are two options for referring to your local version:
+
+1. Create an `.envrc-local` file in the application repository and set the `ZEPHYR_DEVSHELL_SRC` environment variable (e.g. `export ZEPHYR_DEVSHELL_SRC="$HOME/code/zephyr-devshell"`).
+2. Manually override the path to zephyr-devshell:
 
 ```console
-nix develop --override-input zephyr-devshell path:/Users/colin/code/zephyr-devshell
+nix develop --override-input zephyr-devshell path:<path_to_your_zephyr-devshell_clone>
 ```
 
 ## Notes
