@@ -87,6 +87,14 @@ nix flake update zephyr-devshel
 nix fmt
 ```
 
+### Testing Unpushed Changes
+
+When testing changes to this devshell from dependent applications, run:
+
+```console
+nix develop --override-input zephyr-devshell path:/Users/colin/code/zephyr-devshell
+```
+
 ## Notes
 
 * Since Nix's Python environment is immutable, additional Python packages must be added through  `extraPythonPackages` in the application's flake. The usual `west packages pip --install` won't work.
