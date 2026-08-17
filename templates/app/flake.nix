@@ -1,5 +1,5 @@
 {
-  inputs.zephyr-devshell.url = "path:/Users/colin/code/zephyr-devshell";
+  inputs.zephyr-devshell.url = "github:colinbdclark/zephyr-devshell";
 
   outputs =
     { zephyr-devshell, ... }:

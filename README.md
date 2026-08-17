@@ -20,7 +20,7 @@ my-workspace/
 
 ```console
 mkdir -p ~/code/my-workspace/my-app && cd ~/code/my-workspace/my-app
-nix flake init -t path:/Users/colin/code/zephyr-devshell
+nix flake init -t github:colinbdclark/zephyr-devshell
 direnv allow
 ```
 
