@@ -1,0 +1,13 @@
+manifest:
+    remotes:
+        - name: upstream
+          url-base: https://github.com/zephyrproject-rtos
+
+    projects:
+        - name: zephyr
+          remote: upstream
+          revision: v4.4.2
+          import: true
+
+    self:
+        path: app
