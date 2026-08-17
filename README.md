@@ -81,10 +81,10 @@ Via UF2:
 west flash -r uf2
 ```
 
-## Updating to New Versions of this Repository
+## Updating to New Versions of the Devshell
 
 ```console
-nix flake update zephyr-devshel
+nix flake update zephyr-devshell
 ```
 
 ## When Making Changes to this Repository
