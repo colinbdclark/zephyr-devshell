@@ -78,10 +78,16 @@
 
             if [ -z "''${ZEPHYR_BASE:-}" ]; then
                 _topdir="$(west topdir 2>/dev/null || true)"
-                if [ -n "$_topdir" ] && [ -d "$_topdir/zephyr" ]; then
-                    export ZEPHYR_BASE="$_topdir/zephyr"
+                _zbase="$(west config zephyr.base 2>/dev/null || true)"
+                if [ -n "$_topdir" ] && [ -n "$_zbase" ] && [ -d "$_topdir/$_zbase" ]; then
+                    export ZEPHYR_BASE="$_topdir/$_zbase"
+                    export CMAKE_PREFIX_PATH="$ZEPHYR_BASE/share/zephyr-package:''${CMAKE_PREFIX_PATH:-}"
                 fi
-                unset _topdir
+                unset _topdir _zbase
+            fi
+
+            if [[ $- == *i* ]]; then
+              source <(west completion bash)
             fi
           ''
           + shellHook;
