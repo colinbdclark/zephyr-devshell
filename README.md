@@ -9,26 +9,27 @@ It includes the arm-zephyr-eabi and x86_64-zephyr-elf targets.
 Zephyr applications are contained within a West Workspace. Workspaces should not be versioned, but applications should be.
 
 ```
-my-workspace/
+zephyr-workspace/
     .west/             west metadata
     zephyr/            managed by west update
     modules/
-    my-app/            your application
+    app/            your application
 ```
 
-### 1. Initialize the Application Directory
+### 1. Create the Workspace and Application Directories
 
 ```console
-mkdir -p ~/code/my-workspace/my-app && cd ~/code/my-workspace/my-app
+mkdir -p ~/code/zephyr-workspace/app
+cd ~/code/zephyr-workspace/app
 nix flake init -t github:colinbdclark/zephyr-devshell
 direnv allow
 ```
 
 ### 2. Configure West
 
-Set `self.path` in your application's `west.yml` to the application's directory name (i.e. `my-app`).
+Set `self.path` in your application's `west.yml` to the application's directory name (i.e. `app`).
 
-### 3. Initialize West
+### 3. Initialize the Zephyr Workspace
 
 ```console
 west init -l .
